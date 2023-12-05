@@ -32,7 +32,6 @@ This project aims to provide a functional digital tourists,investors and busines
 ·   	To help play a role in reducing the socio-economic challenges in the African continent for its people, now for the long-term.
  
 
-
 MVP APP– USER STORIES
 
 Airbnb Simple Application.
