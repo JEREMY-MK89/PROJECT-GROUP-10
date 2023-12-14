@@ -1,24 +1,25 @@
-import logo from './logo.svg';
-////import './App.css';///
-import 'semantic-ui-css/semantic.min.css';
+import React, { useState, useEffect } from "react";
+import './App.css';
+// import 'semantic-ui-css/semantic.min.css';
+import Header from "./components/Header";
+import Listings from './components/Listings';
+import SortIcons from './components/SortIcons';
 
 function App() {
+
+  const [allHouses, setAllHouses] = useState([]);
+
+  useEffect(() => {
+    fetch("https://my-json-server.typicode.com/JEREMY-MK89/Airbnb-Backend-Set-up-two/details")
+      .then(response => response.json())
+      .then(data => setAllHouses(data));
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Airbnb
-        </a>
-      </header>
+    <div className="App ml-2 my-1">
+      <Header />
+      <SortIcons />
+      <Listings houses={allHouses} />
     </div>
   );
 }
