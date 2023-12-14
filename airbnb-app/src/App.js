@@ -4,6 +4,7 @@ import './App.css';
 import Header from "./components/Header";
 import Listings from './components/Listings';
 import SortIcons from './components/SortIcons';
+import Footer from './components/Footer';
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
       <Header />
       <SortIcons />
       <Listings houses={allHouses} />
+      <Footer />
     </div>
   );
 }
