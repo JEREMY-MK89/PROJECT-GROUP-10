@@ -9,7 +9,13 @@ function Header({ onSearch }) {
         const newValue = event.target.value
         setSearchText(newValue)
     }
-    
+    // UseEffect fot handling when the searchText changes
+    useEffect(() => {
+        onSearch(searchText)
+    }, [searchText])
+
+    // console.log(searchText)
+
 
     return (
         <div className="flex justify-between mb-1">
