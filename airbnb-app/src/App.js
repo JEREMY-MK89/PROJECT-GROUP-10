@@ -16,10 +16,24 @@ function App() {
       .then(data => setAllHouses(data));
   }, []);
 
+  // Function for handling sort by icon
+  function handleSortByIcon() {
+    if (altText !== 'clear') {
+      const filterByIcon = allHouses.filter((house) => house.category.toLowerCase() === altText.toLowerCase())
+      setAllHouses(filterByIcon)
+    } else {
+      fetch("https://my-json-server.typicode.com/JEREMY-MK89/Airbnb-Backend-Set-up-two/details")
+        .then(response => response.json())
+        .then(data => setAllHouses(data))
+    }
+  }
+
+
   return (
     <div className="App ml-2 my-1">
       <Header />
-      <SortIcons />
+      <SortIcons earch={onSearchChange} />
+      <SortIcons sortByIcon={handleSortByIcon} />
       <Listings houses={allHouses} />
       <Footer />
     </div>
