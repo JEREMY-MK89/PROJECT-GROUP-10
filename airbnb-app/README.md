@@ -56,6 +56,6 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 1.	Moses Kingi -Scram Master
 2.	Moses Kingi -Team Lead
 3.	Benny Mathew	
-4.     Kaltuma Abdi
-5.     Noel Bakeloh
+4.  Kaltuma Abdi
+5.  Noel Bakeloh
 
