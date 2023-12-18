@@ -16,12 +16,22 @@ export default function Footer() {
                     ))}
                 </div>
             </div>
+            <div className="bg-neutral-300 p-4 text-center text-neutral-700 dark:bg-neutral-700 dark:text-neutral-200">
+                <h2 className="text-lg font-bold mb-2">About Us</h2>
+                <p className="text-sm">airBnB is the best travel companion when looking for a place to stay.</p>
+            </div>
+
+            <div className="bg-neutral-400 p-4 text-center text-neutral-800 dark:bg-neutral-800 dark:text-neutral-300">
+                <h2 className="text-lg font-bold mb-2">Contact Us</h2>
+                <p className="text-sm">Email: group10@moringa.com</p>
+                <p className="text-sm">Location: Nairobi, Kenya</p>
+            </div>
 
             {/* Why This? */}
             <div className="bg-neutral-300 p-4 text-center text-neutral-700 dark:bg-neutral-700 dark:text-neutral-200">
-                © 2023 Copyright:
+                © 2023 Copyinset-inline-end:
                 <a className="dark:text-neutral-400" href="https://tailwind-elements.com/">
-                    Group X moringa
+                    Moses , Benny , Kaltuma & Bakeloh
                 </a>
             </div>
         </footer>
