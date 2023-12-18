@@ -9,6 +9,7 @@ import Footer from './components/Footer';
 function App() {
 
   const [allHouses, setAllHouses] = useState([]);
+  const [setFIlteredHouses, setFIlteredHouses] = useState([])
 
   useEffect(() => {
     fetch("https://my-json-server.typicode.com/JEREMY-MK89/Airbnb-Backend-Set-up-two/details")
@@ -17,7 +18,7 @@ function App() {
   }, []);
 
   // Function for handling sort by icon
-  function handleSortByIcon() {
+  function handleSortByIcon(altText) {
     if (altText !== 'clear') {
       const filterByIcon = allHouses.filter((house) => house.category.toLowerCase() === altText.toLowerCase())
       setAllHouses(filterByIcon)
@@ -32,7 +33,6 @@ function App() {
   return (
     <div className="App ml-2 my-1">
       <Header />
-      <SortIcons earch={onSearchChange} />
       <SortIcons sortByIcon={handleSortByIcon} />
       <Listings houses={allHouses} />
       <Footer />
