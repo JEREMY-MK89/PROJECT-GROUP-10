@@ -25,16 +25,19 @@ function App() {
     filterData(search, allHouses);
   }
 
-  // Function for handling icon click
-  const handleIconClick = (iconSrc) => {
-    // Filter houses based on the clicked icon source
-    const filtered = allHouses.filter((house) => house.image_url === iconSrc);
-  
-    // Update the filtered data and apply additional filters if needed
-    setFilteredData(filtered);
-    filterData(searchTerm, filtered);
-  };
-  
+  // Function for handling sort by Icon 
+  function handleIconClick(altText) {
+    if (altText !== 'clear') {
+      const filterByIcon = allHouses.filter((house) => house.category.toLowerCase() === altText.toLowerCase())
+      setFilteredData(filterByIcon)
+    } else {
+      fetch("https://my-json-server.typicode.com/JEREMY-MK89/Airbnb-Backend-Set-up-two/details")
+        .then(response => response.json())
+        .then(data => setFilteredData(data))
+    }
+  }
+
+
 
   // Function to filter data based on search term and icon click
   function filterData(search, data) {
@@ -51,7 +54,7 @@ function App() {
       <Header onSearch={onSearchChange} />
       <SortIcons onIconClick={handleIconClick} />
       <Listings houses={filteredData.length > 0 ? filteredData : allHouses} />
-      <Footer/>
+      <Footer />
     </div>
   );
 }
