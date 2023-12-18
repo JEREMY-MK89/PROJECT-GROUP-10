@@ -9,6 +9,7 @@ function HouseCard({ house, imageClass }) {
             <h2>{house.Location}</h2>
             <p>{house.date_uploaded}</p>
             <p>{house.price}</p>
+            <button type="button" className="border border-black p-2 rounded-md">More Details</button>
         </div>
     );
 }
