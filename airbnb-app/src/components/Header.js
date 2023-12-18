@@ -3,7 +3,7 @@ React, { useEffect, useState } from "react";
 function Header({ onSearch }) {
   const [searchText, setSearchText] = useState('');
 
-  // function for handling the search input
+  //function for handling the search input
   function handleSearch(event) {
     const newValue = event.target.value;
     setSearchText(newValue);
